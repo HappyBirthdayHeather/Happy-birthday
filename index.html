@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Heather 🎉</title>
+  <meta name="description" content="A heartfelt birthday surprise for my beautiful Heather 💖✨" />
+  <style>
+    :root{
+      --bg1: #fff0f6;
+      --bg2: #fff7ed;
+      --accent: #ff4da6;
+      --accent2: #ffb86b;
+      --text: #222;
+      --muted: #6b6b6b;
+    }
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: linear-gradient(160deg,var(--bg1),var(--bg2));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      background:rgba(255,255,255,0.85);
+      border-radius:18px;
+      box-shadow: 0 10px 30px rgba(12,12,20,0.12);
+      overflow:hidden;
+      position:relative;
+    }
+
+    header{
+      padding:28px;
+      text-align:center;
+      background: linear-gradient(90deg, rgba(255, 77, 166, 0.06), rgba(255,184,107,0.06));
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    h1{
+      margin:0;
+      font-size:2.8rem;
+      letter-spacing: -1px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+    }
+    h1 .spark{font-size:1.2rem}
+    p.lead{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:1rem;
+    }
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:18px;
+      padding:28px;
+      align-items:start;
+    }
+
+    /* Left column */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      padding:22px;
+      border-radius:12px;
+      box-shadow: 0 6px 18px rgba(12,12,20,0.06);
+    }
+    .hero{
+      font-size:1.05rem;
+      line-height:1.5;
+    }
+
+    .typewriter{
+      margin-top:14px;
+      font-weight:700;
+      font-size:1.6rem;
+      color:var(--accent);
+      min-height:48px;
+    }
+
+    .actions{
+      margin-top:18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      cursor:pointer;
+      border:0;
+      padding:12px 16px;
+      border-radius:10px;
+      background:var(--accent);
+      color:white;
+      font-weight:600;
+      box-shadow: 0 6px 12px rgba(255,77,166,0.12);
+    }
+    .btn.secondary{
+      background:transparent;
+      color:var(--text);
+      border:1px solid rgba(0,0,0,0.06);
+      box-shadow:none;
+    }
+
+    /* Right column (panel) */
+    .panel{
+      padding:18px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      align-items:center;
+      text-align:center;
+    }
+    .photo{
+      width:100%;
+      height:260px;
+      border-radius:10px;
+      overflow:hidden;
+      background:linear-gradient(45deg,#ffe7f2,#fff7e6);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+    .photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+    .small{
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:14px 22px;
+      background:linear-gradient(90deg, rgba(255,184,107,0.03), rgba(255,77,166,0.03));
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    footer .credit{color:var(--muted); font-size:0.9rem}
+
+    /* floating balloons */
+    .balloon{
+      position:absolute;
+      bottom:-120px;
+      width:60px;
+      height:80px;
+      border-radius:50% 50% 50% 50%;
+      transform-origin:center;
+      box-shadow: inset -6px -8px 14px rgba(0,0,0,0.06);
+      opacity:0.95;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:white;
+      font-size:0.8rem;
+    }
+    /* variations */
+    .b1{ left:6%; animation: rise 9s infinite linear; background:#FF6F91; }
+    .b2{ left:22%; animation: rise 11s infinite linear; background:#FFD93D; }
+    .b3{ left:40%; animation: rise 10s infinite linear; background:#6BCB77; }
+    .b4{ left:60%; animation: rise 12s infinite linear; background:#4D96FF; }
+    .b5{ left:80%; animation: rise 8s infinite linear; background:#A78BFA; }
+
+    @keyframes rise {
+      0% { transform: translateY(0) rotate(0deg); opacity:0.95; }
+      50% { opacity:0.8; }
+      100% { transform: translateY(-120vh) rotate(360deg); opacity:0.0; }
+    }
+
+    /* modal photo */
+    .modal{
+      position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:1200;
+      background:linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+    }
+    .modal.open{display:flex}
+    .modal .modal-card{ width:clamp(320px,86%,920px); background:white; padding:18px; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.3) }
+    .modal img{ width:100%; height:auto; border-radius:8px; display:block; }
+
+    /* confetti canvas sits on top */
+    #confettiCanvas{
+      position:fixed; left:0; top:0; width:100%; height:100%; pointer-events:none; z-index:1000;
+    }
+
+    /* responsive */
+    @media (max-width:880px){
+      main{ grid-template-columns: 1fr; padding:18px; }
+      .panel{ order:-1 }
+      h1{ font-size:2rem }
+      .photo{ height:220px }
+    }
+  </style>
+</head>
+<body>
+  <!-- Confetti canvas -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="container" role="main" aria-labelledby="title">
+    <header>
+      <h1 id="title">🎂 Happy Birthday, Heather! <span class="spark">✨</span></h1>
+      <p class="lead">A tiny online surprise made with love — click the buttons for magic 🎉</p>
+    </header>
+
+    <main>
+      <section class="card" aria-label="Message">
+        <div class="hero">
+          <div class="typewriter" id="typewriter"></div>
+          <p style="margin-top:12px;">
+            Today is all about you. I made this little page to make you smile — there's a photo, a slide, and a few fun surprises waiting. Press <strong>Play Song</strong> to start the birthday tune, or hit <strong>Open Photo</strong> to see the picture.
+          </p>
+
+          <div class="actions">
+            <button class="btn" id="surpriseBtn">🎁 Click for Surprise</button>
+            <button class="btn secondary" id="photoBtn">📸 Open Photo</button>
+            <button class="btn secondary" id="slidesBtn">📽️ Open Slides</button>
+            <button class="btn" id="musicBtn">▶️ Play Song</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel" aria-label="Photo and slides">
+        <div class="photo" id="photoPlaceholder" title="Click Open Photo">
+          <!-- Replace 'photo.jpg' with your actual filename in the repo -->
+          <img id="mainPhoto" src="photo.jpg" alt="Heather" onerror="this.style.display='none'">
+          <div id="noPhoto" style="padding:18px; color:var(--muted);">No photo yet — upload <code>photo.jpg</code> to the repo or use the photo modal.</div>
+        </div>
+
+        <div style="width:100%;">
+          <div class="small">Want the Google Slides embedded here? Replace the SLIDES_URL in the HTML below.</div>
+          <!-- Optional embed; leave commented if you don't want an embed -->
+          <!--
+          <iframe id="slidesFrame" src="SLIDES_URL" style="width:100%; height:220px; border:none; border-radius:8px; margin-top:10px;"></iframe>
+          -->
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="credit">Made with ♥ for Heather — 2025</div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <small class="small">Share the link: <code>https://happybirthdayheather.github.io/birthday/</code></small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Photo modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button id="closeModal" style="float:right;background:#fff;border:0;font-weight:700;padding:6px 10px;border-radius:8px;cursor:pointer">✕</button>
+      <img id="modalImg" src="photo.jpg" alt="Heather large photo" onerror="this.style.display='none'">
+      <p id="modalText" class="small" style="margin-top:8px;color:var(--muted)">If the image doesn't appear, upload a file named <code>photo.jpg</code> to the repo or drag it into GitHub's upload UI.</p>
+    </div>
+  </div>
+
+  <!-- Hidden audio (replace 'song.mp3' with your audio file if you upload it) -->
+  <audio id="bgAudio" src="song.mp3" preload="auto"></audio>
+
+  <script>
+    /* -------------------------
+       Typewriter message
+       ------------------------- */
+    const lines = [
+      "Heather — you are loved, cherished, and celebrated today.",
+      "May your day be full of laughter, cake, and tiny perfect moments.",
+      "Open the photo. Press play. Enjoy your surprise. 🎉"
+    ];
+    const typeEl = document.getElementById('typewriter');
+
+    let lineIndex = 0, charIndex = 0;
+    function type() {
+      if(lineIndex >= lines.length) return;
+      const current = lines[lineIndex];
+      typeEl.textContent = current.slice(0, charIndex);
+      charIndex++;
+      if(charIndex > current.length){
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(type, 800);
+      } else {
+        setTimeout(type, 42 + Math.random()*40);
+      }
+    }
+    type();
+
+    /* -------------------------
+       Modal photo open/close
+       ------------------------- */
+    const modal = document.getElementById('modal');
+    const photoBtn = document.getElementById('photoBtn');
+    const closeModal = document.getElementById('closeModal');
+    const modalImg = document.getElementById('modalImg');
+
+    photoBtn.addEventListener('click', () => {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden','false');
+    });
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden','true');
+    });
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+      }
+    });
+
+    /* -------------------------
+       Slides button (opens new tab to slides)
+       Replace SLIDES_URL with the actual 'publish to web' link from Google Slides.
+       ------------------------- */
+    const slidesBtn = document.getElementById('slidesBtn');
+    slidesBtn.addEventListener('click', () => {
+      // Replace the URL below with the published slides URL or share link.
+      const slidesUrl = 'https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/mobilepresent?slide=id.g285ffb5dba0_0_471';
+      window.open(slidesUrl, '_blank', 'noopener');
+    });
+
+    /* -------------------------
+       Surprise button: show confetti + short message
+       ------------------------- */
+    const surpriseBtn = document.getElementById('surpriseBtn');
+    surpriseBtn.addEventListener('click', () => {
+      startConfetti();
+      alert('Surprise, Heather! Wishing you the happiest birthday 🎉💖');
+    });
+
+    /* -------------------------
+       Music controls
+       ------------------------- */
+    const audio = document.getElementById('bgAudio');
+    const musicBtn = document.getElementById('musicBtn');
+    let playing = false;
+    musicBtn.addEventListener('click', () => {
+      // If you uploaded a 'song.mp3' to the repo it will play.
+      if(!audio.src){
+        // if there's no audio file, use WebAudio beep or a gentle tone? For now, show message.
+        alert('No song uploaded. Upload "song.mp3" to the repository to enable music.');
+        return;
+      }
+      if(playing){
+        audio.pause();
+        musicBtn.textContent = '▶️ Play Song';
+      } else {
+        audio.currentTime = 0;
+        audio.play().catch(()=>{ alert('Autoplay blocked by browser — click Play again or interact with the page.'); });
+        musicBtn.textContent = '⏸️ Pause';
+      }
+      playing = !playing;
+    });
+
+    audio.addEventListener('ended', ()=> {
+      playing = false;
+      musicBtn.textContent = '▶️ Play Song';
+    });
+
+    /* -------------------------
+       Confetti implementation (small, lightweight)
+       ------------------------- */
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    let W = canvas.width = innerWidth;
+    let H = canvas.height = innerHeight;
+    window.addEventListener('resize', () => { W = canvas.width = innerWidth; H = canvas.height = innerHeight; });
+
+    function rand(min, max){ return Math.random() * (max - min) + min; }
+    class Confetti {
+      constructor(){
+        this.x = rand(0, W);
+        this.y = rand(-H, 0);
+        this.w = rand(6, 14);
+        this.h = rand(8, 20);
+        this.vx = rand(-0.5, 0.5);
+        this.vy = rand(2, 5);
+        this.color = ['#FF6F91','#FFD93D','#6BCB77','#4D96FF','#A78BFA'][~~rand(0,5)];
+        this.tilt = rand(-10,10);
+        this.tiltSpeed = rand(0.05,0.12);
+        this.angle = rand(0, Math.PI*2);
+      }
+      update(){
+        this.x += this.vx;
+        this.y += this.vy;
+        this.tilt += this.tiltSpeed;
+        if(this.y > H + 20) this.y = rand(-H, -20);
+        if(this.x > W + 20) this.x = rand(-20, W);
+      }
+      draw(ctx){
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(Math.sin(this.tilt)*0.3);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h);
+        ctx.restore();
+      }
+    }
+
+    let confettis = [];
+    function startConfetti(){
+      confettis = Array.from({length:130}, ()=> new Confetti());
+      requestAnimationFrame(runConfetti);
+      setTimeout(()=>{ confettis = []; clearCanvas(); }, 8000); // stop after ~8s
+    }
+    function runConfetti(){
+      if(confettis.length === 0) return;
+      ctx.clearRect(0,0,W,H);
+      confettis.forEach(c => { c.update(); c.draw(ctx); });
+      requestAnimationFrame(runConfetti);
+    }
+    function clearCanvas(){ ctx.clearRect(0,0,W,H); }
+
+    /* -------------------------
+       Small accessibility tweaks & hint if no photo
+       ------------------------- */
+    window.addEventListener('load', () => {
+      // hide the "noPhoto" label if main photo loads
+      const img = document.getElementById('mainPhoto');
+      img.addEventListener('load', () => {
+        document.getElementById('noPhoto').style.display = 'none';
+      });
+    });
+
+    /* -------------------------
+       Helpful notes for you (not executed):
+       - Replace 'photo.jpg' with the actual image filename you upload to the repo.
+       - Replace 'song.mp3' with an uploaded audio file for background music.
+       - Replace SLIDES_URL or uncomment the iframe to embed Google Slides.
+       - Commit files via GitHub UI or Git locally and enable Pages.
+       ------------------------- */
+  </script>
+</body>
+</html>
