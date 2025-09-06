@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Heather 💖</title>
+<title>About Heather Burch 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   /* Reset */
@@ -17,7 +17,6 @@
     color: #222;
   }
 
-  /* Header */
   header {
     background: linear-gradient(90deg, #FF6F91, #FFB86B);
     padding: 20px;
@@ -38,10 +37,8 @@
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   }
 
-  /* Main */
   main { padding: 15px; position: relative; z-index: 2; }
 
-  /* Bio & Vision */
   .bio-card, .vision-card {
     width: 95%;
     max-width: 500px;
@@ -62,7 +59,6 @@
   }
   .bio-card p, .vision-card p { line-height: 1.6; font-size: 1rem; }
 
-  /* Gallery */
   .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -80,7 +76,6 @@
   }
   .photo-gallery img:hover { transform: scale(1.05); }
 
-  /* Buttons */
   .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -101,7 +96,6 @@
   .btn-secondary { background: #fff; color: #FF6F91; border: 2px solid #FF6F91; }
   .btn-secondary:hover { background: #FF6F91; color: #fff; }
 
-  /* Footer */
   footer {
     background: linear-gradient(90deg, #FFB86B, #FF6F91);
     color: #fff;
@@ -110,7 +104,6 @@
     margin-top: 20px;
   }
 
-  /* Confetti */
   #confettiCanvas {
     position: fixed;
     top: 0; left: 0;
@@ -119,7 +112,6 @@
     z-index: 1;
   }
 
-  /* Bubbles */
   .bubble {
     position: absolute;
     border-radius: 50%;
@@ -132,7 +124,6 @@
   }
   @keyframes rise { to { transform: translateY(-120vh); opacity: 0; } }
 
-  /* Hearts */
   .heart {
     position: absolute;
     width: 20px;
@@ -150,7 +141,6 @@
   .heart::before{ top:-10px; left:0; }
   .heart::after{ left:10px; top:0; }
 
-  /* Responsive */
   @media(max-width:500px){
     header h1 { font-size: 1.6rem; }
     .bio-card h2, .vision-card h2 { font-size: 1.3rem; }
@@ -159,7 +149,6 @@
     iframe { width: 90%; height: 200px; }
   }
 
-  /* Embedded players */
   iframe { width: 90%; max-width: 400px; height: 220px; border-radius: 12px; margin: 10px 0; }
 
 </style>
@@ -170,15 +159,15 @@
 
 <header>
   <img src="images/logo.jpg" alt="Logo">
-  <h1>About Heather 💖</h1>
+  <h1>About Heather Burch 💖</h1>
 </header>
 
 <main>
   <!-- Bio -->
   <div class="bio-card">
-    <h2>About Heather</h2>
+    <h2>About Heather Burch</h2>
     <p>
-      Heather has a B.S. in Hospitality Management from the University of Arkansas and holds a Permaculture Design Certificate.
+      Heather Burch has a B.S. in Hospitality Management from the University of Arkansas and holds a Permaculture Design Certificate.
       She’s spent 20 years in the service industry, managing three million-dollar restaurants with 75 employees each. Her
       leadership, passion, and dedication inspire everyone around her.
     </p>
@@ -208,21 +197,18 @@
   <!-- Google Slide -->
   <iframe src="https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
 
-  <!-- YouTube Music -->
-  <iframe src="https://www.youtube.com/embed/YourFirstYouTubeVideoID" allowfullscreen></iframe>
-  <iframe src="https://www.youtube.com/embed/YourSecondYouTubeVideoID" allowfullscreen></iframe>
-
   <!-- Buttons -->
   <div class="buttons">
     <button class="btn btn-secondary" onclick="window.location.href='index.html'">🏠 Back to Birthday Page</button>
     <button class="btn btn-primary" onclick="createBubbles(40)">🎈 Pop Bubbles!</button>
     <button class="btn btn-primary" onclick="window.location.href='wishes.html'">💌 Wishes Page</button>
     <button class="btn btn-primary" onclick="window.location.href='gallery.html'">🌸 Gallery Page</button>
+    <button class="btn btn-secondary" onclick="window.open('https://www.youtube.com/watch?v=egVAW6l_QU8','_blank')">🎶 Play Birthday Music</button>
   </div>
 </main>
 
 <footer>
-  <p>Made with ❤️ just for Heather</p>
+  <p>Made with ❤️ just for Heather Burch</p>
 </footer>
 
 <!-- Confetti -->
@@ -258,7 +244,6 @@ function createBubbles(count=10){
     bubble.addEventListener('animationend',()=>bubble.remove());
   }
 }
-// small bubbles slowly
 setInterval(()=>createBubbles(1),8000);
 </script>
 
