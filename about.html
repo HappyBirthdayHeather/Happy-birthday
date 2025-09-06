@@ -6,66 +6,63 @@
 <title>About Heather 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body {
-    margin: 0;
+  /* Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body, html {
+    width: 100%;
+    overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #FFF0F5, #FFD6E0);
     color: #222;
-    overflow-x: hidden;
   }
 
+  /* Header */
   header {
     background: linear-gradient(90deg, #FF6F91, #FFB86B);
     padding: 20px;
     text-align: center;
-    color: white;
+    color: #fff;
     position: relative;
+    z-index: 2;
   }
   header img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     margin-bottom: 10px;
     object-fit: cover;
   }
   header h1 {
     font-size: 2rem;
-    margin: 0;
-    color: #fff;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   }
 
-  main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  /* Main */
+  main { padding: 15px; position: relative; z-index: 2; }
 
+  /* Bio & Vision */
   .bio-card, .vision-card {
-    width: 90%;
-    max-width: 400px;
-    background: rgba(255,255,255,0.15);
+    width: 95%;
+    max-width: 500px;
+    background: rgba(0,0,0,0.45);
     backdrop-filter: blur(12px);
+    color: #fff;
     padding: 20px;
     border-radius: 20px;
-    margin: 15px 0;
-    color: #fff;
+    margin: 15px auto;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
-
-  .bio-card h2, .vision-card h2 {
-    font-size: 1.5rem;
-    color: #FFD700;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  .bio-card p, .vision-card p {
-    font-size: 1rem;
-    line-height: 1.6;
     text-align: justify;
   }
+  .bio-card h2, .vision-card h2 {
+    font-size: 1.6rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .bio-card p, .vision-card p { line-height: 1.6; font-size: 1rem; }
 
+  /* Gallery */
   .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +80,7 @@
   }
   .photo-gallery img:hover { transform: scale(1.05); }
 
+  /* Buttons */
   .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -98,38 +96,37 @@
     font-weight: bold;
     transition: 0.3s;
   }
-  .btn-primary { background: #FF6F91; color: white; }
+  .btn-primary { background: #FF6F91; color: #fff; }
   .btn-primary:hover { background: #FF3C7E; }
-  .btn-secondary { background: #FFF; color: #FF6F91; border: 2px solid #FF6F91; }
-  .btn-secondary:hover { background: #FF6F91; color: #FFF; }
+  .btn-secondary { background: #fff; color: #FF6F91; border: 2px solid #FF6F91; }
+  .btn-secondary:hover { background: #FF6F91; color: #fff; }
 
+  /* Footer */
   footer {
     background: linear-gradient(90deg, #FFB86B, #FF6F91);
-    color: white;
-    padding: 15px;
+    color: #fff;
     text-align: center;
+    padding: 15px;
     margin-top: 20px;
   }
 
   /* Confetti */
   #confettiCanvas {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1;
   }
 
   /* Bubbles */
   .bubble {
     position: absolute;
     border-radius: 50%;
-    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1rem;
     animation: rise linear forwards;
     pointer-events: none;
   }
@@ -142,40 +139,29 @@
     height: 20px;
     background: red;
     transform: rotate(-45deg);
-    animation: floatHeart 5s linear infinite;
     opacity: 0.7;
   }
   .heart::before, .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 50%;
+    content:"";
+    position:absolute;
+    width:20px; height:20px;
+    background:red; border-radius:50%;
   }
-  .heart::before { top: -10px; left: 0; }
-  .heart::after { left: 10px; top: 0; }
-  @keyframes floatHeart {
-    0% { transform: translateY(0) rotate(-45deg); opacity: 0.7; }
-    50% { opacity: 1; }
-    100% { transform: translateY(-600px) rotate(-45deg); opacity: 0; }
-  }
+  .heart::before{ top:-10px; left:0; }
+  .heart::after{ left:10px; top:0; }
 
+  /* Responsive */
   @media(max-width:500px){
     header h1 { font-size: 1.6rem; }
     .bio-card h2, .vision-card h2 { font-size: 1.3rem; }
     .bio-card p, .vision-card p { font-size: 0.95rem; }
     .photo-gallery img { width: 90%; }
+    iframe { width: 90%; height: 200px; }
   }
 
-  /* Embedded Players */
-  iframe {
-    width: 90%;
-    max-width: 400px;
-    height: 220px;
-    border-radius: 12px;
-    margin: 10px 0;
-  }
+  /* Embedded players */
+  iframe { width: 90%; max-width: 400px; height: 220px; border-radius: 12px; margin: 10px 0; }
+
 </style>
 </head>
 <body>
@@ -188,25 +174,25 @@
 </header>
 
 <main>
-  <section class="bio-card">
+  <!-- Bio -->
+  <div class="bio-card">
     <h2>About Heather</h2>
     <p>
       Heather has a B.S. in Hospitality Management from the University of Arkansas and holds a Permaculture Design Certificate.
-      To cap off her 20 years in the service industry, she's spent the last six years managing three million-dollar restaurants 
-      with an average of 75 employees. Her leadership, passion, and dedication inspire everyone around her.
+      She’s spent 20 years in the service industry, managing three million-dollar restaurants with 75 employees each. Her
+      leadership, passion, and dedication inspire everyone around her.
     </p>
-  </section>
+  </div>
 
-  <section class="vision-card">
+  <!-- Vision -->
+  <div class="vision-card">
     <h2>Our Vision 🌄</h2>
     <p>
       Create a regenerative place to destress from daily life and reconnect with nature through short-term rentals and weekend retreats.
-      A place nestled at the base of the mountains where by day you hit the trails and bask in nature. By night you enjoy the spa,
-      feast on farm-to-table food, and enjoy a fire under the stars. A place to learn how to align with nature and find purpose
-      through outdoor activities, farm-fresh food grown on site, and self-nourishing activities at the spa, hot tubs, and classes.
-      This forms the foundation to a future regenerative agriculture food supply and a self-sustaining safe haven.
+      Explore trails, enjoy the spa, feast on farm-to-table meals, and learn to align with nature. This is the foundation of
+      a self-sustaining safe haven with farm-fresh food and outdoor classes.
     </p>
-  </section>
+  </div>
 
   <!-- Photo Gallery -->
   <section class="photo-gallery">
@@ -219,13 +205,14 @@
     <img src="images/flower8.JPG" alt="Flower 8">
   </section>
 
-  <!-- Embedded Google Slide -->
+  <!-- Google Slide -->
   <iframe src="https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
 
-  <!-- Embedded YouTube -->
+  <!-- YouTube Music -->
   <iframe src="https://www.youtube.com/embed/YourFirstYouTubeVideoID" allowfullscreen></iframe>
   <iframe src="https://www.youtube.com/embed/YourSecondYouTubeVideoID" allowfullscreen></iframe>
 
+  <!-- Buttons -->
   <div class="buttons">
     <button class="btn btn-secondary" onclick="window.location.href='index.html'">🏠 Back to Birthday Page</button>
     <button class="btn btn-primary" onclick="createBubbles(40)">🎈 Pop Bubbles!</button>
@@ -240,22 +227,18 @@
 
 <!-- Confetti -->
 <script>
-const canvas = document.getElementById('confettiCanvas');
-const ctx = canvas.getContext('2d');
-let W = canvas.width = window.innerWidth;
-let H = canvas.height = window.innerHeight;
-window.addEventListener('resize', () => { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; });
+const canvas=document.getElementById('confettiCanvas');
+const ctx=canvas.getContext('2d');
+let W=canvas.width=window.innerWidth,H=canvas.height=window.innerHeight;
+window.addEventListener('resize',()=>{ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; });
 
-const confettiCount = 120;
-const confetti = [];
+const confettiCount=120; const confetti=[];
 for(let i=0;i<confettiCount;i++){
   confetti.push({ x: Math.random()*W, y: Math.random()*H-H, r: Math.random()*6+4, d: Math.random()*confettiCount,
     color:`hsl(${Math.random()*360},100%,50%)`, tilt:Math.random()*10-10, tiltAngleIncrement:Math.random()*0.07+0.05, tiltAngle:0 });
 }
-
 function drawConfetti(){ ctx.clearRect(0,0,W,H); confetti.forEach(c=>{ ctx.beginPath(); ctx.lineWidth=c.r; ctx.strokeStyle=c.color;
-ctx.moveTo(c.x+c.tilt+c.r/2, c.y); ctx.lineTo(c.x+c.tilt, c.y+c.tilt+c.r/2); ctx.stroke(); }); updateConfetti(); }
-
+ctx.moveTo(c.x+c.tilt+c.r/2,c.y); ctx.lineTo(c.x+c.tilt,c.y+c.tilt+c.r/2); ctx.stroke(); }); updateConfetti(); }
 function updateConfetti(){ confetti.forEach(c=>{ c.tiltAngle+=c.tiltAngleIncrement; c.y+=(Math.cos(c.d)+3+c.r/2)/2; c.x+=Math.sin(c.d); c.tilt=Math.sin(c.tiltAngle)*15;
 if(c.y>H){ c.x=Math.random()*W; c.y=-20; c.tilt=Math.random()*10-10; } }); }
 setInterval(drawConfetti,20);
@@ -275,8 +258,8 @@ function createBubbles(count=10){
     bubble.addEventListener('animationend',()=>bubble.remove());
   }
 }
-// Small bubbles appear slowly
-setInterval(()=>createBubbles(2),3000);
+// small bubbles slowly
+setInterval(()=>createBubbles(1),8000);
 </script>
 
 <!-- Hearts -->
