@@ -5,62 +5,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy Birthday Heather 💖</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <style>
   body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #FFF0F5, #FFD6E0);
+    background: linear-gradient(135deg, #FFD6E0, #FFF0F5);
     color: #222;
     overflow-x: hidden;
   }
 
   header {
     background: linear-gradient(90deg, #FF6F91, #FFB86B);
-    padding: 20px;
+    padding: 20px 10px;
     text-align: center;
     color: white;
     position: relative;
   }
   header img {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    margin-bottom: 10px;
     object-fit: cover;
+    margin-bottom: 10px;
   }
   header h1 {
-    font-size: 2rem;
     margin: 0;
-    color: #fff;
+    font-size: 2rem;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   }
 
+  .typewriter {
+    font-size: 1.4rem;
+    color: #FF3C7E;
+    text-align: center;
+    margin: 20px 10px;
+  }
+
   main {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
   }
 
-  .typewriter {
-    font-size: 1.3rem;
-    color: #FF3C7E;
-    text-align: center;
-    margin: 15px 0;
-    overflow: hidden;
-    width: 90%;
-  }
-  .typewriter span {
-    display: inline-block;
-    animation: typing 4s steps(60,end) forwards;
-  }
-  @keyframes typing { from { width:0; } to { width:100%; } }
-
-  .buttons {
+  .photo-gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
+    margin: 15px 0;
+  }
+  .photo-gallery img {
+    width: 45%;
+    max-width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .photo-gallery img:hover { transform: scale(1.05); }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
     margin: 20px 0;
   }
   .btn {
@@ -69,6 +79,7 @@
     border-radius: 12px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1rem;
     transition: 0.3s;
   }
   .btn-primary { background: #FF6F91; color: white; }
@@ -76,35 +87,30 @@
   .btn-secondary { background: #FFF; color: #FF6F91; border: 2px solid #FF6F91; }
   .btn-secondary:hover { background: #FF6F91; color: #FFF; }
 
-  iframe {
-    width: 90%;
-    max-width: 400px;
-    height: 220px;
-    border-radius: 12px;
-    margin: 10px 0;
-  }
-
   footer {
     background: linear-gradient(90deg, #FFB86B, #FF6F91);
     color: white;
     padding: 15px;
     text-align: center;
-    margin-top: 20px;
   }
 
-  #confettiCanvas { position: fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999; }
-
+  /* Confetti & bubbles */
+  #confettiCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+  }
   .bubble {
     position: absolute;
     border-radius: 50%;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     animation: rise linear forwards;
     pointer-events: none;
+    text-align: center;
+    line-height: 1;
   }
-  @keyframes rise { to { transform: translateY(-120vh); opacity:0; } }
+  @keyframes rise { to { transform: translateY(-100vh); opacity: 0; } }
 
   .heart {
     position: absolute;
@@ -116,24 +122,20 @@
     opacity: 0.7;
   }
   .heart::before, .heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: red;
-    border-radius: 50%;
+    content:"";
+    position:absolute;
+    width:20px; height:20px;
+    background:red;
+    border-radius:50%;
   }
   .heart::before { top:-10px; left:0; }
   .heart::after { left:10px; top:0; }
-  @keyframes floatHeart {
-    0% { transform: translateY(0) rotate(-45deg); opacity:0.7; }
-    50% { opacity:1; }
-    100% { transform: translateY(-600px) rotate(-45deg); opacity:0; }
-  }
+  @keyframes floatHeart { 0% {transform:translateY(0) rotate(-45deg);opacity:0.7;} 50%{opacity:1;} 100%{transform:translateY(-600px) rotate(-45deg);opacity:0;} }
 
   @media(max-width:500px){
-    header h1 { font-size:1.6rem; }
-    .typewriter { font-size:1.1rem; }
+    header h1 { font-size: 1.5rem; }
+    .typewriter { font-size: 1.1rem; }
+    .photo-gallery img { width: 90%; max-width: 150px; }
   }
 </style>
 </head>
@@ -147,63 +149,94 @@
 </header>
 
 <main>
-  <div class="typewriter"><span>Heather, may your day be filled with love, joy, and magical surprises! 🌟</span></div>
+  <div class="typewriter">Wishing you joy, love, and endless happiness today! 🎂✨</div>
 
-  <!-- YouTube Music Players -->
-  <iframe src="https://www.youtube.com/embed/YourFirstYouTubeVideoID" allowfullscreen></iframe>
-  <iframe src="https://www.youtube.com/embed/YourSecondYouTubeVideoID" allowfullscreen></iframe>
+  <!-- Photo Gallery -->
+  <section class="photo-gallery">
+    <img src="images/photo1.PNG" alt="Photo 1">
+    <img src="images/photo2.jpg" alt="Photo 2">
+    <img src="images/photo3.jpg" alt="Photo 3">
+    <img src="images/photo4.jpg" alt="Photo 4">
+    <img src="images/photo5.jpg" alt="Photo 5">
+    <img src="images/photo6.jpg" alt="Photo 6">
+    <img src="images/photo7.jpg" alt="Photo 7">
+    <img src="images/photo8.jpg" alt="Photo 8">
+  </section>
 
-  <!-- Navigation Buttons -->
   <div class="buttons">
-    <button class="btn btn-primary" onclick="window.location.href='about.html'">👩‍💼 About Heather</button>
-    <button class="btn btn-primary" onclick="window.location.href='wishes.html'">💌 Wishes Page</button>
-    <button class="btn btn-primary" onclick="window.location.href='gallery.html'">🌸 Gallery Page</button>
-    <button class="btn btn-primary" onclick="createBubbles(40)">🎈 Pop Bubbles!</button>
+    <button class="btn btn-primary" onclick="window.location.href='wishes.html'">🎉 Birthday Wishes</button>
+    <button class="btn btn-primary" onclick="window.location.href='gallery.html'">🖼️ Full Gallery</button>
+    <button class="btn btn-secondary" onclick="window.open('https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/mobilepresent?slide=id.g285ffb5dba0_0_471','_blank')">📽️ Heather's Slides</button>
+    <button class="btn btn-secondary" onclick="playMusic()">🎶 Play Birthday Music</button>
+    <button class="btn btn-primary" onclick="createBubbles(50)">🎈 Pop Bubbles!</button>
   </div>
 </main>
 
 <footer>
   <p>Made with ❤️ just for Heather</p>
+  <p>Enjoy your special day! 🎂🎉</p>
 </footer>
 
-<!-- Confetti -->
 <script>
-const canvas=document.getElementById('confettiCanvas');
-const ctx=canvas.getContext('2d');
-let W=canvas.width=window.innerWidth;
-let H=canvas.height=window.innerHeight;
-window.addEventListener('resize',()=>{ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; });
+/* Confetti */
+const canvas = document.getElementById('confettiCanvas');
+const ctx = canvas.getContext('2d');
+let W = canvas.width = window.innerWidth;
+let H = canvas.height = window.innerHeight;
+window.addEventListener('resize', ()=>{ W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; });
 
-const confettiCount=120;
-const confetti=[];
-for(let i=0;i<confettiCount;i++){ confetti.push({ x:Math.random()*W, y:Math.random()*H-H, r:Math.random()*6+4, d:Math.random()*confettiCount, color:`hsl(${Math.random()*360},100%,50%)`, tilt:Math.random()*10-10, tiltAngleIncrement:Math.random()*0.07+0.05, tiltAngle:0 }); }
+const confettiCount = 120;
+const confetti = [];
+for(let i=0;i<confettiCount;i++){ confetti.push({ x:Math.random()*W, y:Math.random()*H-H, r:Math.random()*6+4, d:Math.random()*confettiCount, color:`hsl(${Math.random()*360},100%,50%)`, tilt:Math.random()*10-10, tiltAngleIncrement:Math.random()*0.07+0.05, tiltAngle:0}); }
 function drawConfetti(){ ctx.clearRect(0,0,W,H); confetti.forEach(c=>{ ctx.beginPath(); ctx.lineWidth=c.r; ctx.strokeStyle=c.color; ctx.moveTo(c.x+c.tilt+c.r/2,c.y); ctx.lineTo(c.x+c.tilt,c.y+c.tilt+c.r/2); ctx.stroke(); }); updateConfetti(); }
 function updateConfetti(){ confetti.forEach(c=>{ c.tiltAngle+=c.tiltAngleIncrement; c.y+=(Math.cos(c.d)+3+c.r/2)/2; c.x+=Math.sin(c.d); c.tilt=Math.sin(c.tiltAngle)*15; if(c.y>H){ c.x=Math.random()*W; c.y=-20; c.tilt=Math.random()*10-10; } }); }
 setInterval(drawConfetti,20);
-</script>
 
-<!-- Bubbles -->
-<script>
+/* Hearts */
+function createHearts(){ setInterval(()=>{ const heart=document.createElement('div'); heart.classList.add('heart'); heart.style.left=Math.random()*window.innerWidth+'px'; heart.style.animationDuration=(Math.random()*5+5)+'s'; document.body.appendChild(heart); heart.addEventListener('animationend',()=>heart.remove()); },500);}
+createHearts();
+
+/* Bubbles */
 const loveEmojis=['❤️','💖','💕','💌','🥰','💘'];
-function createBubbles(count=10){
+function createBubbles(count=50){
   for(let i=0;i<count;i++){
-    const bubble=document.createElement('div'); bubble.classList.add('bubble'); document.body.appendChild(bubble);
-    const size=Math.random()*40+20; bubble.style.width=size+'px'; bubble.style.height=size+'px';
-    bubble.style.left=Math.random()*window.innerWidth+'px'; bubble.style.fontSize=(size/2)+'px';
+    const bubble=document.createElement('div');
+    bubble.classList.add('bubble');
+    document.body.appendChild(bubble);
+    const size=Math.random()*40+20;
+    bubble.style.width=size+'px';
+    bubble.style.height=size+'px';
+    bubble.style.left=Math.random()*window.innerWidth+'px';
+    bubble.style.fontSize=(size/2)+'px';
     bubble.style.animationDuration=(Math.random()*3+2)+'s';
-    if(Math.random()<0.5){ bubble.textContent=loveEmojis[Math.floor(Math.random()*loveEmojis.length)]; bubble.style.background='transparent'; }
-    else{ bubble.style.background=`rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.6)`;}
+    if(Math.random()<0.4){ bubble.textContent=loveEmojis[Math.floor(Math.random()*loveEmojis.length)]; bubble.style.background='transparent'; }
+    else{ bubble.style.background=`rgba(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},0.6)`; }
     bubble.addEventListener('animationend',()=>bubble.remove());
   }
 }
-// Small bubbles slowly appear
-setInterval(()=>createBubbles(1),4000);
-</script>
 
-<!-- Floating Hearts -->
-<script>
-function createHearts(){ setInterval(()=>{ const heart=document.createElement('div'); heart.classList.add('heart'); heart.style.left=Math.random()*window.innerWidth+'px'; heart.style.animationDuration=(Math.random()*5+5)+'s'; document.body.appendChild(heart); heart.addEventListener('animationend',()=>heart.remove()); },500);}
-createHearts();
+/* Slowly create bubbles every 5s */
+let bubbleInterval = setInterval(()=> createBubbles(2),5000);
+
+/* Birthday Music */
+let musicPlayed=false;
+function playMusic(){
+  if(musicPlayed) return;
+  musicPlayed=true;
+  clearInterval(bubbleInterval); // optional: stop auto bubbles if needed
+  const musicLinks=[
+    'https://www.youtube.com/embed/egVAW6l_QU8?autoplay=1&loop=1&playlist=egVAW6l_QU8',
+    'https://www.youtube.com/embed/NrLkTZrPZA4?autoplay=1&loop=1&playlist=NrLkTZrPZA4',
+    'https://www.youtube.com/embed/TihRnbAhGOw?autoplay=1&loop=1&playlist=TihRnbAhGOw',
+    'https://www.youtube.com/embed/GxldQ9eX2wo?autoplay=1&loop=1&playlist=GxldQ9eX2wo'
+  ];
+  musicLinks.forEach(link=>{
+    const iframe=document.createElement('iframe');
+    iframe.width=0; iframe.height=0; iframe.src=link; iframe.allow='autoplay'; iframe.frameBorder=0;
+    document.body.appendChild(iframe);
+  });
+  createBubbles(100); // big bubble burst
+}
 </script>
 
 </body>
