@@ -39,7 +39,7 @@
 
   main { padding: 15px; position: relative; z-index: 2; }
 
-  .bio-card, .vision-card {
+  .bio-card {
     width: 95%;
     max-width: 500px;
     background: rgba(0,0,0,0.45);
@@ -51,14 +51,55 @@
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     text-align: justify;
   }
-  .bio-card h2, .vision-card h2 {
+  .bio-card h2 {
     font-size: 1.6rem;
     color: #FFD700;
     text-align: center;
     margin-bottom: 10px;
   }
-  .bio-card p, .vision-card p { line-height: 1.6; font-size: 1rem; }
+  .bio-card p { line-height: 1.6; font-size: 1rem; }
 
+  /* Vision + Slide Container */
+  .vision-slide-container {
+    width: 95%;
+    max-width: 500px;
+    margin: 20px auto;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .vision-slide-container iframe {
+    width: 100%;
+    height: 220px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(255,105,145,0.6);
+  }
+
+  .vision-card {
+    width: 100%;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: justify;
+  }
+  .vision-card h2 {
+    font-size: 1.5rem;
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .vision-card p { line-height: 1.6; font-size: 1rem; }
+
+  /* Photo Gallery */
   .photo-gallery {
     display: flex;
     flex-wrap: wrap;
@@ -76,6 +117,7 @@
   }
   .photo-gallery img:hover { transform: scale(1.05); }
 
+  /* Buttons */
   .buttons {
     display: flex;
     flex-wrap: wrap;
@@ -149,8 +191,6 @@
     iframe { width: 90%; height: 200px; }
   }
 
-  iframe { width: 90%; max-width: 400px; height: 220px; border-radius: 12px; margin: 10px 0; }
-
 </style>
 </head>
 <body>
@@ -173,14 +213,16 @@
     </p>
   </div>
 
-  <!-- Vision -->
-  <div class="vision-card">
-    <h2>Our Vision 🌄</h2>
-    <p>
-      Create a regenerative place to destress from daily life and reconnect with nature through short-term rentals and weekend retreats.
-      Explore trails, enjoy the spa, feast on farm-to-table meals, and learn to align with nature. This is the foundation of
-      a self-sustaining safe haven with farm-fresh food and outdoor classes.
-    </p>
+  <!-- Vision + Google Slide -->
+  <div class="vision-slide-container">
+    <iframe src="https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+    <div class="vision-card">
+      <h2>Our Vision 🌄</h2>
+      <p>
+        Our vision is illustrated in the Google Slide above: creating a regenerative space where guests can destress, reconnect with nature, and enjoy farm-to-table meals, outdoor activities, and holistic retreats. 
+        This slide captures the essence of the safe, self-sustaining haven Heather Burch is building.
+      </p>
+    </div>
   </div>
 
   <!-- Photo Gallery -->
@@ -194,27 +236,24 @@
     <img src="images/flower8.JPG" alt="Flower 8">
   </section>
 
-  <!-- Google Slide -->
-  <iframe src="https://docs.google.com/presentation/d/1ZOef0uvItTyCnXHyjHMz6H4dcVLd8NhULNvGTBMJch4/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
-
   <!-- Buttons -->
   <div class="buttons">
-  <button class="btn btn-primary" onclick="window.location.href='wishes.html'">🎉 Birthday Wishes</button>
-  <button class="btn btn-primary" onclick="window.location.href='gallery.html'">🖼️ Full Gallery</button>
-  <button class="btn btn-secondary" onclick="window.location.href='about.html'">💖 About Heather Burch</button>
+    <button class="btn btn-primary" onclick="window.location.href='wishes.html'">🎉 Birthday Wishes</button>
+    <button class="btn btn-primary" onclick="window.location.href='gallery.html'">🖼️ Full Gallery</button>
+    <button class="btn btn-secondary" onclick="window.location.href='about.html'">💖 About Heather Burch</button>
 
-  <!-- Music buttons -->
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/egVAW6l_QU8?si=_HGhSZQYjvvmvIRX','_blank')">🎶 Music 1</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/m_17NIdYlMs?si=yKzI_QekZiV19EgW','_blank')">🎶 Music 2</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/NrLkTZrPZA4?si=_T6mg9iKD7CsPDxo','_blank')">🎶 Music 3</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/LZTdFrzrVgU?si=A5dw1huvpdNmEBdo','_blank')">🎶 Music 4</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/qwKcQwLl2UM?si=58S1HTVW9vUwAv__','_blank')">🎶 Music 5</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/KEuddKEdXw4?si=W3Ka5MKVsnmj9YZi','_blank')">🎶 Music 6</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/ulOb9gIGGd0?si=d8DuWbQvYb-z0Ibr','_blank')">🎶 Music 7</button>
-  <button class="btn btn-secondary" onclick="window.open('https://youtu.be/Y8HOfcYWZoo?si=gtjZdFt1P7hmVJcM','_blank')">🎶 Music 8</button>
+    <!-- Music buttons -->
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/egVAW6l_QU8?si=_HGhSZQYjvvmvIRX','_blank')">🎶 Music 1</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/m_17NIdYlMs?si=yKzI_QekZiV19EgW','_blank')">🎶 Music 2</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/NrLkTZrPZA4?si=_T6mg9iKD7CsPDxo','_blank')">🎶 Music 3</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/LZTdFrzrVgU?si=A5dw1huvpdNmEBdo','_blank')">🎶 Music 4</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/qwKcQwLl2UM?si=58S1HTVW9vUwAv__','_blank')">🎶 Music 5</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/KEuddKEdXw4?si=W3Ka5MKVsnmj9YZi','_blank')">🎶 Music 6</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/ulOb9gIGGd0?si=d8DuWbQvYb-z0Ibr','_blank')">🎶 Music 7</button>
+    <button class="btn btn-secondary" onclick="window.open('https://youtu.be/Y8HOfcYWZoo?si=gtjZdFt1P7hmVJcM','_blank')">🎶 Music 8</button>
 
-  <button class="btn btn-primary" onclick="createBubbles(50)">🎈 Pop Bubbles!</button>
-</div>
+    <button class="btn btn-primary" onclick="createBubbles(50)">🎈 Pop Bubbles!</button>
+  </div>
 </main>
 
 <footer>
